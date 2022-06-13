@@ -62,7 +62,7 @@ void question2() {
 	//b3. viet vong lap nhap du lieu cho n-hinh chu nhat
 	printf(" Please enter the data for \n");
 	for(int i=0; i<n; i++) {
-		printf(" Rectangle no %d: \n", i+1);
+		printf("\n Rectangle no %d: \n", i+1);
 		printf(" Width: ");
 		scanf("%d" , &ds[i].w);
 		printf(" Height: ");
@@ -73,7 +73,16 @@ void question2() {
 	}
 
 	//b4. in danh sach n-hinh chu nhat, nhap o buoc b3
-
+	printf("\n\n Lists of Rectangles \n");
+	
+	// in tieu de [No Width Height Area Color]
+	printf("No  Width  Height Area  Color \n");
+	
+	for(int i=0; i<n; i++){
+		printf("%3d %5d %6d %5d  %s \n" , 
+		i+1, ds[i].w , ds[i].h, ds[i].w*ds[i].h, ds[i].color);
+	}
+	
 }
 
 
