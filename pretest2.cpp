@@ -4,6 +4,7 @@
 
 //khai bao cac ham duoc goi trong ham main()
 void question2();
+void question1();
 
 int main() {
 	//thiet ke menu chuong trinh (10 diem)
@@ -22,6 +23,7 @@ int main() {
 
 		switch(op) {
 			case '1':
+				question1();
 				break;
 			case '2':
 				question2();	// goi ham quan ly cac hinh chu nhat
@@ -85,4 +87,32 @@ void question2() {
 	
 }
 
+
+
+//cau so 1: in ra so luong uoc so le cua 1 so nguyen N bat ky
+void question1(){
+	int n;
+	//b1. nhap so nguyen duong n bat ky
+	while(1) {
+		printf(" Enter an integer number N > 0: ");
+		scanf("%d", &n);
+		if(n>0) {
+			break;
+		}
+	}//ket thuc while
+	
+	printf(" >> Odd divisors of %d are:", n);
+	int count = 0;	// bien dem so luong cac uoc so le cua n
+	for(int i=1; i<=n; i=i+2){
+		if(n%i==0) {
+			printf(" %d ", i);
+			count++;
+		}
+	}// ket thuc vong FOR
+	
+	printf("\n >> Number of odd divisors of %d : %d \n", n, count);
+	
+	
+	
+} 
 
