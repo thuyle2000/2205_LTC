@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 //khai bao cac ham duoc goi trong ham main()
 void question2();
@@ -89,9 +90,41 @@ void question2() {
 }
 
 
-
+//kiem tra so nguyen N co phai la so amstrong ?
 void question1() {
-
-
+	int n;
+	
+	fflush(stdin);
+	printf(" Enter N: ");
+	scanf("%d", &n);
+	
+	//b1. dem so ky so co trong N
+	int n_digits = 0;
+	int tam = n;
+	while(1){
+		tam = tam /10;
+		n_digits++;
+		
+		if(tam==0) break;
+	}
+	
+	//b2. tinh tong cua tung ky so luy thua theo tong-so-ky-so
+	int sum = 0;
+	tam = n;
+	int digit = 0;
+	
+	for(int i=0; i<n_digits; i++){
+		digit = tam%10;
+		tam = tam/10;		
+		sum += pow(digit, n_digits);
+	}
+	
+	//b3. ket luan
+	if(sum == n){
+		printf(" >> %d is the amstrong number ! \n", n);
+	}
+	else{
+		printf(" >> %d is NOT the amstrong number ! \n", n);
+	}
 }
 
